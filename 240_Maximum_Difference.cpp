@@ -20,6 +20,7 @@ class Solution {
             }
             s.push(i);
         }
+      
         while (!s.empty()) {
             l[s.top()] = 0;
             s.pop();
@@ -28,6 +29,7 @@ class Solution {
         for (int i = 0; i < n / 2; i++) {
             swap(arr[i], arr[n - i - 1]);
         }
+      
         s.push(0);
         for (int i = 1; i < n; i++) {
             while (!s.empty() and arr[s.top()] > arr[i]) {
@@ -43,6 +45,7 @@ class Solution {
         for (int i = 0; i < n / 2; i++) {
             swap(r[i], r[n - i - 1]);
         }
+      
         int ans = INT_MIN;
         for (int i = 0; i < n; i++) {
             ans = max(ans, abs(l[i] - r[i]));
